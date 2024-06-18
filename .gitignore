@@ -1,0 +1,45 @@
+# Node.js dependencies
+node_modules/
+
+# Build outputs
+build/
+dist/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+
+# Babel and ESLint files
+*.babelrc
+*.eslintrc
+*.eslintcache
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+
+# MacOS specific files
+*.DS_Store
+
+# Webpack cache
+.cache/
