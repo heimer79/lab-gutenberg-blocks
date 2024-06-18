@@ -27,4 +27,30 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-if (!defined('ABSPATH')) exit;
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
+/* Register blocks and enqueue CSS */
+
+/**
+ * Function to register Gutenberg blocks
+ */
+function register_blocks() {
+    // If Gutenberg is not available, do nothing
+    if (!function_exists('register_block_type')) {
+        return;
+    }
+
+    // Register block type for current register_blocks
+
+    wp_register_script(
+        'lab-editor-script', // Handle for the block script
+        plugins_url('build/index.js', __FILE__), // Path to the script
+        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'), // Dependencies
+        filemtime(plugin_dir_path(__FILE__) . 'build/index.js') // Version based on file modification time
+    );
+}
+
+/**
+ * Hook to register blocks on 'init' action
+ */
+add_action('init', 'register_blocks');
