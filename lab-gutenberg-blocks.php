@@ -48,6 +48,15 @@ function register_blocks() {
         array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'), // Dependencies
         filemtime(plugin_dir_path(__FILE__) . 'build/index.js') // Version based on file modification time
     );
+
+    // Editor Styles
+
+    wp_register_style('lab-editor-styles', plugins_url('build/editor.css', __FILE__), array('wp-edit-block'), filemtime(plugin_dir_path(__FILE__) . 'build/editor.css'));
+
+
+    // Frontend Styles
+
+    wp_register_style('lab-front-end-styles', plugins_url('build/style.css', __FILE__), array(), filemtime(plugin_dir_path(__FILE__) . 'build/style.css'));
 }
 
 /**
