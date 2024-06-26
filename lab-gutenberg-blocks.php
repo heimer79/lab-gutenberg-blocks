@@ -63,8 +63,8 @@ function register_blocks() {
 
     $blocks = array(
         'lab/testimonial', // First block
-        'lab/hero', // Second block
-        'lab/imagentexto', // Third block
+       /*  'lab/hero', // Second block
+        'lab/imagentexto', // Third block */
     );
 
     // run blocks array and register each block with register_block_type
