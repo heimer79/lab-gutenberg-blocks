@@ -57,6 +57,28 @@ function register_blocks() {
     // Frontend Styles
 
     wp_register_style('lab-front-end-styles', plugins_url('build/style.css', __FILE__), array(), filemtime(plugin_dir_path(__FILE__) . 'build/style.css'));
+
+
+    // Blocks array 
+
+    $blocks = array(
+        'lab/testimonial', // First block
+        'lab/hero', // Second block
+        'lab/imagentexto', // Third block
+    );
+
+    // run blocks array and register each block with register_block_type
+
+    foreach ($blocks as $block) {
+        register_block_type($block, array(
+            'editor_script' => 'lab-editor-script',
+            'editor_style' => 'lab-editor-styles',
+            'style' => 'lab-front-end-styles',
+        ));
+    }
+
+
+
 }
 
 /**
