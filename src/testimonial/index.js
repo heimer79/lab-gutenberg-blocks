@@ -10,13 +10,18 @@ const { registerBlockType } = wp.blocks;
 registerBlockType( 'lab/testimonial', {
     title: 'Lab Testimonial',
     icon: 'format-quote',
-    category: 'common',
-    attributes: {
-        content: {
-            type: 'string',
-            source: 'html',
-            selector: 'p',
-        }
+    category: 'lab-category',
+    edit: () =>
+    {
+        return (
+            <p>Esto se ve el editor</p>
+        )
+    },
+    save: () =>
+    {
+        return (
+            <p>Esto se ve en el front end</p>
+        )
     }
 }
 )

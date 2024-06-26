@@ -29,6 +29,25 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
+
+// Custom categories for blocks
+
+function lab_block_categories($categories, $post)
+{
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'lab-category',
+                'title' => __('Lab Category', 'lab-gutenberg-blocks'),
+                'icon'  => 'awards'
+            )
+        )
+    );
+}
+
+add_filter('block_categories', 'lab_block_categories', 10, 2);
+
 /* Register blocks and enqueue CSS */
 
 /**
