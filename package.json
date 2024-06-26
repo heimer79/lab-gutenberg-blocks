@@ -1,0 +1,30 @@
+{
+  "name": "lab-gutenberg-blocks",
+  "version": "1.0.0",
+  "description": "Crea gutenberg blocks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heimer79/lab-gutenberg-blocks.git"
+  },
+  "keywords": [
+    "Heimer",
+    "Martinez"
+  ],
+  "author": "Heimer Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heimer79/lab-gutenberg-blocks/issues"
+  },
+  "homepage": "https://github.com/heimer79/lab-gutenberg-blocks#readme",
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@wordpress/scripts": "^28.1.0",
+    "url-loader": "^4.1.1"
+  }
+}
