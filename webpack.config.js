@@ -14,10 +14,23 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
+            },
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'images/', // Opcional: cambiar la ruta de salida
+                        }
+                    }
+                ]
             }
+
         ]
     },
     resolve: {
-        extensions: [ '.js', '.jsx' ]
+        extensions: [ '.js', '.jsx', '.svg' ] // Agregar extensión SVG a las resoluciones
     }
 };

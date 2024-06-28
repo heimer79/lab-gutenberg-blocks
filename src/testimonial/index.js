@@ -14,7 +14,16 @@ registerBlockType( 'lab/testimonial', {
     {
         // Asegúrate de que tu entorno de compilación está configurado para interpretar JSX
         return (
-            <p>Esto se ve en el editor</p>
+            <div className="testimonial-block">
+                <blockquote>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi voluptatem reiciendis id placeat libero. Explicabo nulla pariatur iure repudiandae officiis accusamus deleniti provident possimus omnis. Ipsum ipsa placeat recusandae consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem qui doloremque culpa molestiae.
+                </blockquote>
+
+                <div className="testimonial-info">
+                    <img src="img/testimonial.jpg" />
+                    <p>- Alice White <span>WebDev CEO</span></p>
+                </div>
+            </div>
         );
     },
     save: () =>
