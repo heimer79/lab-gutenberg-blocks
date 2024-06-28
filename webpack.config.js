@@ -1,16 +1,23 @@
-const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+const path = require( 'path' );
 
 module.exports = {
-    ...defaultConfig,
+    entry: './src/index.js',
+    output: {
+        path: path.resolve( __dirname, 'build' ),
+        filename: 'index.js'
+    },
     module: {
-        ...defaultConfig.module,
         rules: [
-            ...defaultConfig.module.rules,
             {
-                test: /\.svg$/,
-                use: [ '@svgr/webpack', 'url-loader' ],
-
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                }
             }
         ]
+    },
+    resolve: {
+        extensions: [ '.js', '.jsx' ]
     }
 };
